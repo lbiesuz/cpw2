@@ -9,7 +9,7 @@
     <script>
 
         async function createPromise(url){
-            return new Promise{
+            return new Promise(
             function(resolve,reject){
                 var xhr = new XMLHttpRequest();
                 xhr.open("GET",url,true);
@@ -23,10 +23,9 @@
                         reject("Erro na requisição");
                     }
                 }
-                xhr.send();
-            };
+                xhr.send();}
+            );
         }
-    };
         const main = async () => {
             try{
                 var value = await createPromise("data.json");
