@@ -7,10 +7,12 @@
 </head>
 <body>
     <script>
-        var promise = new Promise(
+
+        async function createPromise(url){
+            return new Promise{
             function(resolve,reject){
                 var xhr = new XMLHttpRequest();
-                xhr.open("GET", "data.json",true);
+                xhr.open("GET",url,true);
                 xhr.onreadystatechange = function(){
                     if(xhr.readyState == 4){
                         if (xhr.status == 200){
@@ -22,19 +24,19 @@
                     }
                 }
                 xhr.send();
+            };
+        }
+    };
+        const main = async () => {
+            try{
+                var value = await createPromise("data.json");
+                console.log(value);
             }
-        );
-        promise
-            .then(
-                function(result){
-                    console.log(result);
-                }
-            )
-            .catch(
-                function(error){
-                    console.log(error);
-                }
-            );
+            catch (error){
+                console.log(error);
+            }
+        }
+        main();
     </script>    
 </body>
 </html>
