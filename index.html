@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var promise = new Promise(
+            function(resolve,reject){
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "data.json",true);
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        if (xhr.status == 200){
+                        resolve(xhr.responseText);
+                        }
+                    }
+                    else{
+                        reject("Erro na requisição");
+                    }
+                }
+                xhr.send();
+            }
+        );
+        promise
+            .then(
+                function(result){
+                    console.log(result);
+                }
+            )
+            .catch(
+                function(error){
+                    console.log(error);
+                }
+            );
+    </script>    
+</body>
+</html>
