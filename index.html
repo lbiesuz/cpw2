@@ -18,9 +18,9 @@
                             if (xhr.status == 200){
                             resolve(xhr.responseText);
                             }
-                        }
-                        else{
-                            reject("Erro na requisição");
+                            else{
+                                reject("Erro na requisição");
+                            }
                         }
                     }
                     xhr.send();}
