@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+hr {
+    width: 500px;
+}
+#tagErros {
+    display:none;
+}
+#errors {
+    display:none;
+    color: coral;
+}
+#board {
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tile {
+    width: 48px; 
+    height: 48px;
+    border: 1px solid lightgray;
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#digits {
+    width: 450px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.number {
+    width: 44px; 
+    height: 44px;
+    border: 1px solid black;
+    margin: 2px;
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dificuldade {
+    width: 150px; 
+    height: 50px;
+    border: 2px solid black;
+    margin: 0 auto 5 auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dificuldade-selecionada {
+    background-color:grey;
+}
+.number-selected {
+    background-color:grey;
+}
+.tile-start {
+    background-color: whitesmoke;
+}
+.horizontal-line {
+    border-bottom: 1px solid black;
+}
+.vertical-line {
+    border-right: 1px solid black;
+}
